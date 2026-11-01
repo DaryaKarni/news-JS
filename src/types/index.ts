@@ -1,12 +1,11 @@
-
 export interface Source {
-  id: string;
-  name: string;
-  description?: string;
-  url?: string;
-  category?: string;
-  language?: string;
-  country?: string;
+    id: string;
+    name: string;
+    description?: string;
+    url?: string;
+    category?: string;
+    language?: string;
+    country?: string;
 }
 
 export interface SourcesResponse {
@@ -42,20 +41,20 @@ export interface IAppView {
 
 export type ReadonlyArticles = ReadonlyArray<Article>;
 export interface INews {
-  draw(data: ReadonlyArticles): void;
+    draw(data: ReadonlyArticles): void;
 }
 
 export enum NewsSelectors {
-  Template = '#newsItemTemp',
-  Container = '.news',
-  Item = '.news__item',
-  Photo = '.news__meta-photo',
-  Author = '.news__meta-author',
-  Date = '.news__meta-date',
-  Title = '.news__description-title',
-  Source = '.news__description-source',
-  Content = '.news__description-content',
-  ReadMore = '.news__read-more a',
+    Template = '#newsItemTemp',
+    Container = '.news',
+    Item = '.news__item',
+    Photo = '.news__meta-photo',
+    Author = '.news__meta-author',
+    Date = '.news__meta-date',
+    Title = '.news__description-title',
+    Source = '.news__description-source',
+    Content = '.news__description-content',
+    ReadMore = '.news__read-more a',
 }
 
 export interface ISources {
@@ -63,25 +62,25 @@ export interface ISources {
 }
 
 export enum SourceSelectors {
-  Template = '#sourceItemTemp',
-  Container = '.sources',
-  ItemName = '.source__item-name',
-  Item = '.source__item',
+    Template = '#sourceItemTemp',
+    Container = '.sources',
+    ItemName = '.source__item-name',
+    Item = '.source__item',
 }
 
 export type SourceCallback = (data: Readonly<SourcesResponse>) => void;
 export type NewsCallback = (data: Readonly<NewsResponse>) => void;
 
 export enum Endpoints {
-  Sources = 'sources',
-  Everything = 'everything',
+    Sources = 'sources',
+    Everything = 'everything',
 }
 
 export type Options = Partial<Record<string, string>>;
 
 export interface GetRespParams {
-  endpoint: string;
-  options?: Options; 
+    endpoint: string;
+    options?: Options;
 }
 
 export enum HttpMethod {

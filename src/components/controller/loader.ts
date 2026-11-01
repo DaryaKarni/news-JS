@@ -1,4 +1,4 @@
-import { GetRespParams, HttpMethod, Options } from "../../types";
+import { GetRespParams, HttpMethod, Options } from '../../types';
 
 class Loader {
     protected readonly baseLink: string;
@@ -15,7 +15,7 @@ class Loader {
         }
     ): void {
         this.load<T>(HttpMethod.GET, endpoint, callback, options);
-    };
+    }
 
     protected errorHandler(res: Response): Response {
         if (!res.ok) {
@@ -38,12 +38,7 @@ class Loader {
         return url.slice(0, -1);
     }
 
-    protected load<T>(
-        method: HttpMethod,
-        endpoint: string,
-        callback: (data: T) => void,
-        options: Options = {}
-    ): void {
+    protected load<T>(method: HttpMethod, endpoint: string, callback: (data: T) => void, options: Options = {}): void {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res: Response) => res.json())

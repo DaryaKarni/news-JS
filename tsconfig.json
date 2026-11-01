@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-
+    
     "module": "nodenext",
     "target": "esnext",
-    "types": [],
+    "types": ["node"],
     "rootDir": "./src",
     "moduleResolution": "nodenext",
 

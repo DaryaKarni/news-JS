@@ -2,7 +2,7 @@ import News from './news/news';
 import Sources from './sources/sources';
 import { IAppView, NewsResponse, SourcesResponse } from '../../types';
 
-export class AppView implements IAppView{
+export class AppView implements IAppView {
     private readonly news: News;
     private readonly sources: Sources;
 
@@ -16,7 +16,7 @@ export class AppView implements IAppView{
         this.news.draw(values);
     }
 
-    drawSources(data?: Readonly<NewsResponse> | undefined): void {
+    drawSources(data?: Readonly<SourcesResponse> | undefined): void {
         const values = data?.sources ? data.sources : [];
         this.sources.draw(values);
     }

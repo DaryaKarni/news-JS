@@ -1,7 +1,7 @@
 import { ISources, Source, SourceSelectors } from '../../../types';
 import './sources.css';
 
-class Sources implements ISources{
+class Sources implements ISources {
     draw(data: ReadonlyArray<Source>): void {
         const fragment = document.createDocumentFragment();
 

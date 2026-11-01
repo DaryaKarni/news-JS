@@ -1,16 +1,15 @@
 import './news.css';
-import { Article, INews, NewsSelectors, ReadonlyArticles } from '../../../types';
+import { INews, NewsSelectors, ReadonlyArticles } from '../../../types';
 
-class News implements INews{
+class News implements INews {
     private readonly maxItems: number = 10;
     private readonly defaultImage: string = 'img/news_placeholder.jpg';
-    
+
     draw(data: ReadonlyArticles) {
-       
         const news = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
 
         const fragment = document.createDocumentFragment();
-        const newsItemTemp = document.querySelector<HTMLTemplateElement>(NewsSelectors.Template);;
+        const newsItemTemp = document.querySelector<HTMLTemplateElement>(NewsSelectors.Template);
         const newsContainer = document.querySelector<HTMLElement>(NewsSelectors.Container);
         if (!newsItemTemp || !newsContainer) return;
 
@@ -27,11 +26,7 @@ class News implements INews{
             if (author) author.textContent = item.author || item.source.name;
             const date = newsClone.querySelector<HTMLElement>(NewsSelectors.Date);
             if (date) {
-                date.textContent = item.publishedAt
-                    .slice(0, 10)
-                    .split('-')
-                    .reverse()
-                    .join('-');
+                date.textContent = item.publishedAt.slice(0, 10).split('-').reverse().join('-');
             }
             const title = newsClone.querySelector<HTMLElement>(NewsSelectors.Title);
             if (title) title.textContent = item.title;
