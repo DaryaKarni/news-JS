@@ -1,7 +1,8 @@
 import AppLoader from './appLoader';
+import { SourcesResponse, NewsResponse } from '../../types';
 
 class AppController extends AppLoader {
-    getSources(callback) {
+    getSources(callback: (data: SourcesResponse) => void) {
         super.getResp(
             {
                 endpoint: 'sources',
@@ -10,7 +11,7 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(e, callback) {
+    getNews(e: Event, callback: (data: NewsResponse) => void) {
         let target = e.target;
         const newsContainer = e.currentTarget;
 
