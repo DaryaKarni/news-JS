@@ -61,3 +61,32 @@ export enum NewsSelectors {
 export interface ISources {
     draw(data: ReadonlyArray<Source>): void;
 }
+
+export enum SourceSelectors {
+  Template = '#sourceItemTemp',
+  Container = '.sources',
+  ItemName = '.source__item-name',
+  Item = '.source__item',
+}
+
+export type SourceCallback = (data: Readonly<SourcesResponse>) => void;
+export type NewsCallback = (data: Readonly<NewsResponse>) => void;
+
+export enum Endpoints {
+  Sources = 'sources',
+  Everything = 'everything',
+}
+
+export type Options = Partial<Record<string, string>>;
+
+export interface GetRespParams {
+  endpoint: string;
+  options?: Options; 
+}
+
+export enum HttpMethod {
+    GET = 'GET',
+    POST = 'POST',
+    PUT = 'PUT',
+    DELETE = 'DELETE',
+}
