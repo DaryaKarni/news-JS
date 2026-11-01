@@ -21,6 +21,7 @@ class Sources implements ISources {
             if (sourceItem) {
                 sourceItem.setAttribute('data-source-id', item.id);
             }
+            fragment.append(sourceClone);
         });
 
         container.append(fragment);

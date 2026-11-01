@@ -4,9 +4,7 @@ class AppLoader extends Loader {
     public constructor() {
         const apiUrl = process.env.API_URL as string;
         const apiKey = process.env.API_KEY as string;
-        super(apiUrl, {
-            apiKey: apiKey,
-        });
+        super(apiUrl, { apiKey: apiKey });
     }
 }
 
