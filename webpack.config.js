@@ -16,14 +16,14 @@ const baseConfig = {
             },
             {
                 test: /\.ts$/,
-                use:{
+                use: {
                     loader: 'ts-loader',
                     options: {
-                        transpileOnly: true
-                    }
+                        transpileOnly: true,
+                    },
                 },
                 exclude: /node_modules/,
-            }
+            },
         ],
     },
     resolve: {
@@ -41,7 +41,7 @@ const baseConfig = {
         }),
         new CleanWebpackPlugin(),
         new ESLintPlugin({
-            extensions: ['ts', 'js'], 
+            extensions: ['ts', 'js'],
         }),
     ],
 };
