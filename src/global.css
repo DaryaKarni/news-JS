@@ -1,7 +1,17 @@
+
+* {
+    box-sizing: border-box;
+}
 body {
+    margin: 0;
     color: #fff;
     background: #17181c;
     font-family: sans-serif;
+}
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 header {
@@ -17,7 +27,11 @@ footer {
     height: 100px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    max-width: 1920px;
+    margin: 0 auto;
+    gap: 10vw;
 }
 footer .copyright {
     font-size: 14px;
@@ -32,4 +46,28 @@ footer .copyright a:hover {
 }
 footer .copyright:before {
     content: '©';
+}
+footer .text {
+    font-style: none;
+    text-decoration: none;
+    color: #333;
+}
+
+@media (min-width: 640px) {
+    main {
+        padding: 0 30px;
+    }
+
+    header {
+        padding: 20px 30px;
+        text-align: left;
+    }
+
+    header h1 {
+        font-size: 40px;
+    }
+
+    footer {
+        padding: 0 30px;
+    }
 }
